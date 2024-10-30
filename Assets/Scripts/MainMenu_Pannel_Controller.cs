@@ -22,4 +22,21 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     {
         MainMenu_Pannel.SetActive(true);
     }
+
+    public void Play_button()
+    {
+        // Play Button Logic here
+    }
+    public void Settings_button()
+    {
+        // Settings Button Logic here
+    }
+    public void HowToPlay_button()
+    {
+        // How To Play Button Logic here
+    }
+    public void Credits_button()
+    {
+        // Credits Button Logic here
+    }
 }

@@ -283,7 +283,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 468834430}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718305885}
+        m_TargetAssemblyTypeName: MainMenu_Pannel_Controller, Assembly-CSharp
+        m_MethodName: Credits_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &468834430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,7 +508,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 758361462}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718305885}
+        m_TargetAssemblyTypeName: MainMenu_Pannel_Controller, Assembly-CSharp
+        m_MethodName: HowToPlay_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &758361462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,7 +641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1124161452}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718305885}
+        m_TargetAssemblyTypeName: MainMenu_Pannel_Controller, Assembly-CSharp
+        m_MethodName: Play_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1124161452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,7 +1276,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2140233077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1718305885}
+        m_TargetAssemblyTypeName: MainMenu_Pannel_Controller, Assembly-CSharp
+        m_MethodName: Settings_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2140233077
 MonoBehaviour:
   m_ObjectHideFlags: 0
