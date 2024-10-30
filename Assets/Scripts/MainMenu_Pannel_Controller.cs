@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class MainMenu_Pannel_Controller : MonoBehaviour
 {
-    public GameObject MainMenu_Pannel;
+    public GameObject MainMenu_Pannel, Settings_Pannel, HowToPlay_Pannel, Credits_Pannel;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,9 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     private void Initialize_Pannels()
     {
         MainMenu_Pannel.SetActive(true);
+        Settings_Pannel.SetActive(false);
+        HowToPlay_Pannel.SetActive(false);
+        Credits_Pannel.SetActive(false);
     }
 
     public void Play_button()
