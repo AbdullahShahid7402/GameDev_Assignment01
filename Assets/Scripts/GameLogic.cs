@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
+    public Animator timerAnimations;
     bool noTouch;
     public static int touchcount;
     public Text Timer_Text;
@@ -43,6 +44,11 @@ public class GameLogic : MonoBehaviour
         Timer_Logic();
         Tap_Logic();
         highscore_Logic();
+        timerAnimations_Management();
+    }
+    private void timerAnimations_Management()
+    {
+        timerAnimations.SetFloat("Timer",timer);
     }
     private void Timer_Logic()
     {

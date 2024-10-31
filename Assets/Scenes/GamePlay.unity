@@ -1758,8 +1758,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2aa923675b9f144ba029541cb3e79c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerAnimations: {fileID: 1715082271}
   Timer_Text: {fileID: 1715082269}
   Score_Text: {fileID: 539705922}
+  HighScore_Text: {fileID: 2079484556}
 --- !u!4 &1220178363
 Transform:
   m_ObjectHideFlags: 0
@@ -1998,6 +2000,7 @@ GameObject:
   - component: {fileID: 1450965932}
   - component: {fileID: 1450965934}
   - component: {fileID: 1450965933}
+  - component: {fileID: 1450965935}
   m_Layer: 5
   m_Name: GamePlayUI
   m_TagString: Untagged
@@ -2063,6 +2066,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450965931}
   m_CullTransparentMesh: 1
+--- !u!95 &1450965935
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450965931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9da5394963f9878158dab8ccb9f345a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1568008626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,6 +2509,7 @@ GameObject:
   - component: {fileID: 1715082268}
   - component: {fileID: 1715082270}
   - component: {fileID: 1715082269}
+  - component: {fileID: 1715082271}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -2553,6 +2578,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715082267}
   m_CullTransparentMesh: 1
+--- !u!95 &1715082271
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715082267}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ceabe4aec358bdb084fd852c2e6e2ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1728251019
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,7 +3440,7 @@ GameObject:
   - component: {fileID: 2079484557}
   - component: {fileID: 2079484556}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: HighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
