@@ -9,6 +9,7 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Reset_PlayerPrefs();
         Initialize_Pannels();
     }
 
@@ -16,6 +17,12 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     void Update()
     {
         
+    }
+
+    // just call this in main menu to remove all player saved data
+    private void Reset_PlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     // Initialize all Pannels' Active Status Here
