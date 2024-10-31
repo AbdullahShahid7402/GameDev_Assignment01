@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class MainMenu_Pannel_Controller : MonoBehaviour
 {
     public GameObject MainMenu_Pannel, Settings_Pannel, HowToPlay_Pannel, Credits_Pannel;
@@ -29,6 +30,7 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     public void Play_button()
     {
         // Play Button Logic here
+        SceneManager.LoadScene("Gameplay");
     }
     public void Settings_button()
     {

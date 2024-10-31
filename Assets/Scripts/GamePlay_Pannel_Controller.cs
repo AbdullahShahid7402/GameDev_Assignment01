@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePlay_Pannel_Controller : MonoBehaviour
 {
-    public GameObject Pause_Pannel;
+    public GameObject Gameplay_Pannel, Pause_Pannel;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,24 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
     }
     private void Reset_Pannels()
     {
+        Gameplay_Pannel.SetActive(true);
         Pause_Pannel.SetActive(false);
+    }
+
+    public void Pause_Button()
+    {
+        // Pause Button displays pause pannel and hide main pannel
+        Gameplay_Pannel.SetActive(false);
+        Pause_Pannel.SetActive(true);
+    }
+    public void MainMenu()
+    {
+        // Go back to the main menu scene
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void Reset()
+    {
+        // Go back to the main menu scene
+        SceneManager.LoadScene("Gameplay");
     }
 }
