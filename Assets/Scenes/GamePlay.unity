@@ -1643,6 +1643,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gameplay_Pannel: {fileID: 1450965931}
   Pause_Pannel: {fileID: 914795904}
+  Win_Pannel: {fileID: 561922703}
+  Lose_Pannel: {fileID: 2036979502}
   button_audio_source: {fileID: 828568181}
 --- !u!1 &908705534
 GameObject:
@@ -2346,7 +2348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1450965932
 RectTransform:
   m_ObjectHideFlags: 0

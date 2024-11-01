@@ -11,7 +11,7 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Reset_Pannels();
+        Invoke("Reset_Pannels",3f);
         button_audio = button_audio_source.GetComponent<AudioSource>();
     }
 

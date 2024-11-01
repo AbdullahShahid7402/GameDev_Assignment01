@@ -18,9 +18,11 @@ public class GameLogic : MonoBehaviour
     public Text HighScore_Text;
     public static float timer;
     private int highscore;
+    private bool started;
     void Awake()
     {
-        paused = false;
+        paused = true;
+        started = false;
         if(!PlayerPrefs.HasKey("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore",0);
@@ -33,8 +35,8 @@ public class GameLogic : MonoBehaviour
         highscore = PlayerPrefs.GetInt("HighScore");
         noTouch = true;
         touchcount = 0;
-        timer = 15;
-        // this is just to ensure 50th second stays on the timer aswell
+        timer = 3;
+        // this is just to ensure last second stays on the timer aswell
         timer += 0.999f;
         Timer_Text.text = float_to_int(timer).ToString();
         Score_Text.text = touchcount.ToString();
@@ -44,6 +46,7 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartTimer();
         Timer_Logic();
         Tap_Logic();
         Score_Text.text = touchcount.ToString();
@@ -54,8 +57,28 @@ public class GameLogic : MonoBehaviour
     {
         timerAnimations.SetFloat("Timer",timer);
     }
+    private void StartTimer()
+    {
+        if(started)
+            return;
+        if(timer >= 1f)
+        {
+            timer -= Time.deltaTime;
+            Timer_Text.text = float_to_int(timer).ToString();
+            if(timer < 1)
+            {
+                timer = 15;
+                timer += 0.999f;
+
+                paused = false;
+                started = true;
+            }
+        }
+    }
     private void Timer_Logic()
     {
+        if(!started)
+            return;
         if(paused)
             return;
         if(timer >= 1f)
@@ -80,6 +103,8 @@ public class GameLogic : MonoBehaviour
     }
     private void Tap_Logic()
     {
+        if(!started)
+            return;
         if(float_to_int(timer) == 0)
             return;
         if( noTouch && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)))
