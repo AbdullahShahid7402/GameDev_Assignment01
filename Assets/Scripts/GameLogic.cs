@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
+    public GameObject[] ScouterStuff;
     public static bool paused;
     public Animator timerAnimations;
     bool noTouch;
@@ -32,6 +33,10 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for(int i = 0; i < ScouterStuff.Length; i++)
+        {
+            ScouterStuff[i].SetActive(false);
+        }
         highscore = PlayerPrefs.GetInt("HighScore");
         noTouch = true;
         touchcount = 0;
