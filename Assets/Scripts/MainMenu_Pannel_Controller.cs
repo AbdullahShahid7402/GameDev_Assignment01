@@ -19,7 +19,7 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audio_source.volume = AudioSettings.volume;
+        audio_source.volume = AudioSettings.volume * AudioSettings.Unmute_factor;
     }
 
     // just call this in main menu to remove all player saved data
@@ -65,6 +65,21 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
         var anim1 = MainMenu_Pannel.GetComponent<Animator>();
         anim1.SetTrigger("Down Move");
         Credits_Pannel.SetActive(true);
+    }
+    public void Mute_Click()
+    {
+        AudioSettings.Unmute_factor = 1;
+    }
+
+    public void Remove_HighScore_Click()
+    {
+        PlayerPrefs.SetInt("HighScore",0);
+        PlayerPrefs.Save();
+    }
+
+    public void Unmute_Click()
+    {
+        AudioSettings.Unmute_factor = 0;
     }
     public void BackToMenu_button()
     {

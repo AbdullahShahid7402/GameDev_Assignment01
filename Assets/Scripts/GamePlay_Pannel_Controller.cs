@@ -28,15 +28,18 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
         // Pause Button displays pause pannel and hide main pannel
         Gameplay_Pannel.SetActive(false);
         Pause_Pannel.SetActive(true);
+        GameLogic.touchcount--;
     }
     public void MainMenu()
     {
         // Go back to the main menu scene
         SceneManager.LoadScene("MainMenu");
+        GameLogic.touchcount--;
     }
     public void Reset()
     {
         // Go back to the main menu scene
         SceneManager.LoadScene("Gameplay");
+        GameLogic.touchcount--;
     }
 }
