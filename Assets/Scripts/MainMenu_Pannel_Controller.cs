@@ -9,7 +9,7 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Reset_PlayerPrefs();
+        // Reset_PlayerPrefs();
         Initialize_Pannels();
     }
 
