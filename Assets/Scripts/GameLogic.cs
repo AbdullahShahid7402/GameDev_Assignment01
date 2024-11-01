@@ -46,6 +46,7 @@ public class GameLogic : MonoBehaviour
     {
         Timer_Logic();
         Tap_Logic();
+        Score_Text.text = touchcount.ToString();
         highscore_Logic();
         timerAnimations_Management();
     }
@@ -81,7 +82,6 @@ public class GameLogic : MonoBehaviour
     {
         if(float_to_int(timer) == 0)
             return;
-        Score_Text.text = touchcount.ToString();
         if( noTouch && (Input.touchCount > 0 || Input.GetMouseButtonDown(0)))
         {
             noTouch = false;
