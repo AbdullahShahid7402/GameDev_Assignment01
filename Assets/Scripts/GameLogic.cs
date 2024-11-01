@@ -20,14 +20,11 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.HasKey("HighScore"))
+        if(!PlayerPrefs.HasKey("HighScore"))
         {
-            highscore = PlayerPrefs.GetInt("HighScore");
+            PlayerPrefs.SetInt("HighScore",0);
         }
-        else
-        {
-            highscore = 0;
-        }
+        highscore = PlayerPrefs.GetInt("HighScore");
         noTouch = true;
         touchcount = 0;
         timer = 15;
@@ -68,6 +65,7 @@ public class GameLogic : MonoBehaviour
         {
             highscore = touchcount;
             PlayerPrefs.SetInt("HighScore",highscore);
+            HighScore_Text.text = highscore.ToString();
         }
     }
     private void Tap_Logic()
