@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
+    public static bool paused;
     public Animator timerAnimations;
     bool noTouch;
     public static int touchcount;
@@ -19,6 +20,7 @@ public class GameLogic : MonoBehaviour
     private int highscore;
     void Awake()
     {
+        paused = false;
         if(!PlayerPrefs.HasKey("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore",0);
@@ -53,6 +55,8 @@ public class GameLogic : MonoBehaviour
     }
     private void Timer_Logic()
     {
+        if(paused)
+            return;
         if(timer >= 1f)
         {
             timer -= Time.deltaTime;

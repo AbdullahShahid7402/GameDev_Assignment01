@@ -25,9 +25,10 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
 
     public void Pause_Button()
     {
+        GameLogic.paused = !GameLogic.paused;
         // Pause Button displays pause pannel and hide main pannel
-        Gameplay_Pannel.SetActive(false);
-        Pause_Pannel.SetActive(true);
+        // Gameplay_Pannel.SetActive(!Gameplay_Pannel.activeSelf);
+        Pause_Pannel.SetActive(!Pause_Pannel.activeSelf);
         GameLogic.touchcount--;
     }
     public void MainMenu()
