@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePlay_Pannel_Controller : MonoBehaviour
 {
-    public GameObject Gameplay_Pannel, Pause_Pannel;
+    public GameObject Gameplay_Pannel, Pause_Pannel, Win_Pannel, Lose_Pannel;
     public GameObject button_audio_source;
     private AudioSource button_audio;
     // Start is called before the first frame update
@@ -18,12 +18,14 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        WinLose();
     }
     private void Reset_Pannels()
     {
         Gameplay_Pannel.SetActive(true);
         Pause_Pannel.SetActive(false);
+        Win_Pannel.SetActive(false);
+        Lose_Pannel.SetActive(false);
     }
 
     public void Pause_Button()
@@ -49,5 +51,22 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
         GameLogic.touchcount--;
         button_audio.Play();
+    }
+    private void WinLose()
+    {
+        if(GameLogic.timer >= 1f)
+            return;
+        
+        // Hide the pause button now
+        Gameplay_Pannel.SetActive(false);
+        // add win or lose screens
+        if(GameLogic.touchcount > 50)
+        {
+            Win_Pannel.SetActive(true);
+        }
+        else
+        {
+            Lose_Pannel.SetActive(true);
+        }
     }
 }

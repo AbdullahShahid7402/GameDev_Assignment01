@@ -16,7 +16,7 @@ public class GameLogic : MonoBehaviour
     public Text Timer_Text;
     public Text Score_Text;
     public Text HighScore_Text;
-    private float timer;
+    public static float timer;
     private int highscore;
     void Awake()
     {
