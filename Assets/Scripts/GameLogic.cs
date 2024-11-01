@@ -20,6 +20,7 @@ public class GameLogic : MonoBehaviour
     public static float timer;
     private int highscore;
     private bool started;
+    private AudioSource BGM;
     void Awake()
     {
         paused = true;
@@ -33,6 +34,7 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BGM = GetComponent<AudioSource>();
         for(int i = 0; i < ScouterStuff.Length; i++)
         {
             ScouterStuff[i].SetActive(false);
@@ -51,6 +53,7 @@ public class GameLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BGM.volume = AudioSettings.volume;
         StartTimer();
         Timer_Logic();
         Tap_Logic();
@@ -74,7 +77,10 @@ public class GameLogic : MonoBehaviour
             {
                 timer = 15;
                 timer += 0.999f;
-
+                for(int i = 0; i < ScouterStuff.Length; i++)
+                {
+                    ScouterStuff[i].SetActive(true);
+                }
                 paused = false;
                 started = true;
             }
@@ -92,6 +98,10 @@ public class GameLogic : MonoBehaviour
             Timer_Text.text = float_to_int(timer).ToString();
             if(timer < 1)
             {
+                for(int i = 1; i < ScouterStuff.Length; i++)
+                {
+                    ScouterStuff[i].SetActive(false);
+                }
                 timer = 0.001f;
             }
         }
