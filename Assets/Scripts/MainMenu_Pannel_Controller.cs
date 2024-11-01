@@ -50,13 +50,17 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     public void HowToPlay_button()
     {
         // How To Play Button Logic here
-        MainMenu_Pannel.SetActive(false);
+        // MainMenu_Pannel.SetActive(false);
+        var anim1 = MainMenu_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Up Move");
         HowToPlay_Pannel.SetActive(true);
     }
     public void Credits_button()
     {
         // Credits Button Logic here
-        MainMenu_Pannel.SetActive(false);
+        // MainMenu_Pannel.SetActive(false);
+        var anim1 = MainMenu_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Down Move");
         Credits_Pannel.SetActive(true);
     }
     public void BackToMenu_button()
@@ -67,6 +71,10 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
         var anim1 = MainMenu_Pannel.GetComponent<Animator>();
         anim1.SetTrigger("Go Back");
         anim1 = Settings_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Go Back");
+        anim1 = HowToPlay_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Go Back");
+        anim1 = Credits_Pannel.GetComponent<Animator>();
         anim1.SetTrigger("Go Back");
         Invoke("Initialize_Pannels",1f);
     }
