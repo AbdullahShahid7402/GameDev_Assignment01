@@ -42,7 +42,9 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     public void Settings_button()
     {
         // Settings Button Logic here
-        MainMenu_Pannel.SetActive(false);
+        // MainMenu_Pannel.SetActive(false);
+        var anim1 = MainMenu_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Right Move");
         Settings_Pannel.SetActive(true);
     }
     public void HowToPlay_button()
@@ -61,6 +63,11 @@ public class MainMenu_Pannel_Controller : MonoBehaviour
     {
         // Back To Menu Button Logic here
         // already logic exists in initialize pannels function... so might aswell just use it as it is
-        Initialize_Pannels();
+        
+        var anim1 = MainMenu_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Go Back");
+        anim1 = Settings_Pannel.GetComponent<Animator>();
+        anim1.SetTrigger("Go Back");
+        Invoke("Initialize_Pannels",1f);
     }
 }
