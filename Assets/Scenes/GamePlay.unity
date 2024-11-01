@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gameplay_Pannel: {fileID: 1450965931}
   Pause_Pannel: {fileID: 914795904}
-  button_audio_source: {fileID: 0}
+  button_audio_source: {fileID: 828568181}
 --- !u!1 &908705534
 GameObject:
   m_ObjectHideFlags: 0
