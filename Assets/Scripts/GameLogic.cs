@@ -17,13 +17,17 @@ public class GameLogic : MonoBehaviour
     public Text HighScore_Text;
     private float timer;
     private int highscore;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(!PlayerPrefs.HasKey("HighScore"))
         {
             PlayerPrefs.SetInt("HighScore",0);
+            PlayerPrefs.Save();
         }
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
         highscore = PlayerPrefs.GetInt("HighScore");
         noTouch = true;
         touchcount = 0;
@@ -66,6 +70,7 @@ public class GameLogic : MonoBehaviour
             highscore = touchcount;
             PlayerPrefs.SetInt("HighScore",highscore);
             HighScore_Text.text = highscore.ToString();
+            PlayerPrefs.Save();
         }
     }
     private void Tap_Logic()

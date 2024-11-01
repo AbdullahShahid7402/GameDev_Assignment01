@@ -5,18 +5,21 @@ using UnityEngine.SceneManagement;
 public class MainMenu_Pannel_Controller : MonoBehaviour
 {
     public GameObject MainMenu_Pannel, Settings_Pannel, HowToPlay_Pannel, Credits_Pannel;
+    private AudioSource audio_source;
     
     // Start is called before the first frame update
     void Start()
     {
         // Reset_PlayerPrefs();
         Initialize_Pannels();
+        audio_source = GetComponent<AudioSource>();
+        audio_source.volume = AudioSettings.volume;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        audio_source.volume = AudioSettings.volume;
     }
 
     // just call this in main menu to remove all player saved data
