@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEditor.VisionOS;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -9,8 +11,10 @@ using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
+    public AudioClip[] TapSounds;
     public GameObject[] ScouterStuff;
-    public static bool paused;
+    public GameObject Tap_Player;
+    public static bool paused;  
     public Animator timerAnimations;
     bool noTouch;
     public static int touchcount;
@@ -57,7 +61,14 @@ public class GameLogic : MonoBehaviour
         StartTimer();
         Timer_Logic();
         Tap_Logic();
-        Score_Text.text = touchcount.ToString();
+        if(Score_Text.text != touchcount.ToString())
+        {
+            AudioSource temp = Tap_Player.GetComponent<AudioSource>();
+            int index = UnityEngine.Random.Range(0,TapSounds.Length);
+            temp.clip = TapSounds[index];
+            temp.Play();
+            Score_Text.text = touchcount.ToString();
+        }
         highscore_Logic();
         timerAnimations_Management();
     }
