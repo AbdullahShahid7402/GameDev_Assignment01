@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class GamePlay_Pannel_Controller : MonoBehaviour
 {
     public GameObject Gameplay_Pannel, Pause_Pannel;
+    public GameObject button_audio_source;
+    private AudioSource button_audio;
     // Start is called before the first frame update
     void Start()
     {
         Reset_Pannels();
+        button_audio = button_audio_source.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,17 +33,20 @@ public class GamePlay_Pannel_Controller : MonoBehaviour
         // Gameplay_Pannel.SetActive(!Gameplay_Pannel.activeSelf);
         Pause_Pannel.SetActive(!Pause_Pannel.activeSelf);
         GameLogic.touchcount--;
+        button_audio.Play();
     }
     public void MainMenu()
     {
         // Go back to the main menu scene
         SceneManager.LoadScene("MainMenu");
         GameLogic.touchcount--;
+        button_audio.Play();
     }
     public void Reset()
     {
         // Go back to the main menu scene
         SceneManager.LoadScene("Gameplay");
         GameLogic.touchcount--;
+        button_audio.Play();
     }
 }
